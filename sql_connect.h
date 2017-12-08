@@ -20,6 +20,7 @@ public:
     void take_parents(Person* person);
     void create_person(Person* person);
     QString take_name(qint16 id);
+    ~sql_connect();
 
 };
 

@@ -14,7 +14,7 @@ class person_GraphicItem :public QGraphicsItem
 
 public:
     Person* person;
-    qreal x,y;
+    qreal x,y,size_x,size_y;
 
 
     person_GraphicItem();
@@ -24,22 +24,22 @@ public:
 private:
     QRectF boundingRect() const;
 
-        // overriding paint()
-        void paint(QPainter * painter,
-                   const QStyleOptionGraphicsItem * option,
-                   QWidget * widget);
+    // overriding paint()
+    void paint(QPainter * painter,
+               const QStyleOptionGraphicsItem * option,
+               QWidget * widget);
 
-        QRectF rect;
+    QRectF rect;
 
 
-        QImage avatar;
+    QImage avatar;
 
-    protected:
+protected:
 
         // overriding mouse events
       //  void mousePressEvent(QGraphicsSceneMouseEvent *event);
        // void mouseReleaseEvent(QGraphicsSceneMouseEvent *event);
 };
 
-person_GraphicItem* simple_tree(Person*);
+
 #endif // PERSON_GRAPHICITEM_H

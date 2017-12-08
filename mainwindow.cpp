@@ -45,7 +45,6 @@ MainWindow::MainWindow(QWidget *parent) :
 
 
 
-
    // ui->family_list->hideColumn(0);
     ui->family_list->verticalHeader()->hide();
     ui->family_list->horizontalHeader()->hide();
@@ -64,10 +63,11 @@ MainWindow::MainWindow(QWidget *parent) :
 
 MainWindow::~MainWindow()
 {
-    delete ui;
+
     delete scene;
     delete database;
     delete st_view;
+    delete ui;
 }
 
 void MainWindow::on_family_list_clicked(const QModelIndex &index)
@@ -80,10 +80,10 @@ void MainWindow::on_family_list_clicked(const QModelIndex &index)
    st_view = new SimpleTree((ui->family_list->item(ui->family_list->currentRow(),0)->text().toInt()),scene,database);
   // qDebug() << ui->family_list->item(ui->family_list->currentRow(),0)->text().toInt();// wypisanie numeru id
 
+
 }
 
 void MainWindow::on_pushButton_clicked()
 {
-   scene->removeItem(st_view->close_family);
 
 }

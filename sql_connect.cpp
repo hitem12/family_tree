@@ -66,6 +66,7 @@ void sql_connect::create_person(Person* person)
         {
          person->parents[0] = query_m.value(0).toInt();
          person->parents[1] = query_m.value(1).toInt();
+         qDebug() << "ojca " <<person->parents[0] << "matka " << person->parents[1];
         }
     }
      else
@@ -153,6 +154,11 @@ QString sql_connect::take_name(qint16 id)
     }
     else
     { qDebug() << "Error"; return "Error";}
+}
+
+sql_connect::~sql_connect()
+{
+    db.close();
 }
 
 
